@@ -9,16 +9,16 @@ function App() {
     setLogs((logs) => [...logs, log]);
   }
 
-  const network = clusterApiUrl('devnet');
+  const network = clusterApiUrl('mainnet-beta');
   const [providerUrl, setProviderUrl] = useState('https://www.sollet.io');
   const connection = useMemo(() => new Connection(network), [network]);
   const urlWallet = useMemo(() => new Wallet(providerUrl, network), [
     providerUrl,
     network,
   ]);
-  const injectedWallet = useMemo(() => new Wallet(window.solana, network), [network]);
   const [selectedWallet, setSelectedWallet] = useState(undefined);
   const [, setConnected] = useState(false);
+
   useEffect(() => {
     if (selectedWallet) {
       selectedWallet.on('connect', () => {
@@ -40,7 +40,7 @@ function App() {
     try {
       let transaction = SystemProgram.transfer({
         fromPubkey: selectedWallet.publicKey,
-        toPubkey: selectedWallet.publicKey,
+        toPubkey: '2i1vUcbvUKJcftvZMZr7utpZoZhQiLR1mLNjGRy9UmGB',
         lamports: 100,
       });
       addLog('Getting recent blockhash');
@@ -79,11 +79,10 @@ function App() {
           <button onClick={() => selectedWallet.disconnect()}>Disconnect</button>
         </div>
       ) : (
-        <div>
-          <button onClick={() => setSelectedWallet(urlWallet)}>Connect to Wallet</button>
-          <button onClick={() => setSelectedWallet(injectedWallet)}>Connect to Injected Wallet</button>
-        </div>
-      )}
+          <div>
+            <button onClick={() => setSelectedWallet(urlWallet)}>Connect to Wallet</button>
+          </div>
+        )}
       <hr />
       <div className="logs">
         {logs.map((log, i) => (
