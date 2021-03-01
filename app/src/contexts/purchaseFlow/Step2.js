@@ -33,6 +33,7 @@ const baseStyle = {
   width: '100%',
   display: 'flex',
   minHeight: '200px',
+  marginBottom: '50px',
   marginTop: '30px',
   flexDirection: 'column',
   justifyContent: 'center',
@@ -132,14 +133,13 @@ const Dropzone = ({ image, setImage, selection }) => {
         flexDirection: 'column',
       }}
     >
-      <div style={{ ...style }} {...getRootProps({ className: 'dropzone' })}>
+      <div {...getRootProps({ className: 'dropzone' })} style={{ ...style }}>
         <input {...getInputProps()} />
         {image
           ? `This is what your ad will look like.`
           : `Drag 'n' drop your image file here, or click to select`}
         <aside style={thumbsContainer}>{image && thumbnail}</aside>
       </div>
-      <Text>The image preview above is the same size as your selection.</Text>
     </div>
   );
 };

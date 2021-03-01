@@ -62,8 +62,6 @@ const GridView = ({ mergedCells, cellData, handleAddCell }) => {
     [selections],
   );
 
-  console.log(currentAdvertisement);
-
   return (
     <Row gutter={[16, 16]} align="middle">
       <Col span={24}>
