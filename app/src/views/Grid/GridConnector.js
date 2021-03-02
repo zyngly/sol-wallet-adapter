@@ -1,7 +1,7 @@
-import React, { useState, useContext, useEffect } from "react";
-import Grid from "./Grid";
-import { getCellData } from "./utils";
-import { useApi } from "../../contexts/api";
+import React, { useState, useEffect } from 'react';
+import Grid from './Grid';
+import { getCellData } from './utils';
+import { useApi } from '../../contexts/api';
 
 const GridConnector = (props) => {
   const { data, handleAddCell } = useApi();

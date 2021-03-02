@@ -16,11 +16,7 @@ const rowCount = 35;
 const columnCount = 50;
 
 const GridView = ({ mergedCells, cellData, handleAddCell }) => {
-  const {
-    currentAdvertisement,
-    setCurrentAdvertisement,
-    advertise,
-  } = useAdvertise();
+  const { setCurrentAdvertisement, advertise } = useAdvertise();
   const { purchase, select } = usePurchase({
     handleAddCell,
   });

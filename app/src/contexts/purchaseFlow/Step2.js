@@ -6,8 +6,6 @@ import { PREVIEW_HEIGHT, PREVIEW_WIDTH } from './constants';
 import { getRectSize } from './utils';
 import { CELL_SIZE } from '../../components/Grid';
 
-const { Text } = Typography;
-
 const thumbsContainer = {
   display: 'flex',
   flexDirection: 'row',
