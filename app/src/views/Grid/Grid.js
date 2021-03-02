@@ -52,12 +52,10 @@ const GridView = ({ mergedCells, cellData, handleAddCell }) => {
     },
   });
 
-  const selectionNotAllowed = useCallback(() => {
-    return (
-      selections.length > 0 &&
-      selectionContainsMergedCells(selections[0]?.bounds, mergedCells)
-    );
-  }, [mergedCells, selections]);
+  // TODO(Stefan): Fix performance here, useCallback
+  const selectionNotAllowed =
+    selections.length > 0 &&
+    selectionContainsMergedCells(selections[0]?.bounds, mergedCells);
 
   return (
     <Row gutter={[16, 16]} align="middle">
