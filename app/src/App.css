@@ -1,4 +1,14 @@
 @import '~antd/dist/antd.dark.css';
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;500&family=Raleway:wght@300;800&display=swap');
+
+html,
+body {
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
 
 .logs {
   word-break: break-all;
