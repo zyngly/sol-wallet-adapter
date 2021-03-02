@@ -30,13 +30,6 @@ body {
   overflow: auto;
 }
 
-.app-title {
-  align-items: center;
-  font-style: normal;
-  font-weight: 300;
-  letter-spacing: 0px;
-}
-
 .ant-layout-header {
   align-items: center;
   height: 42px;

@@ -3,11 +3,14 @@ import { Layout } from 'antd';
 import { Link } from 'react-router-dom';
 
 import { AppBar } from './AppBar';
-import { Typography } from 'antd';
-const { Title } = Typography;
-// import zyngly from './zyngly.svg';
+import { StyledHeading } from '../components';
+import styled from 'styled-components';
 
 const { Header, Content } = Layout;
+
+const Margins = styled.div`
+  margin: 10px;
+`;
 
 const APP_TITLE = 'Million Sol Page';
 
@@ -17,9 +20,11 @@ export const AppLayout = ({ children }) => {
       <Layout title={APP_TITLE}>
         <Header className="App-Bar">
           <Link to="/">
-            <div className="app-title">
-              <Title level={3}>SOLPAGE</Title>
-            </div>
+            <Margins>
+              <StyledHeading fontSize="24px" fontWeight={300}>
+                SOLPAGE
+              </StyledHeading>
+            </Margins>
           </Link>
           <AppBar />
         </Header>
