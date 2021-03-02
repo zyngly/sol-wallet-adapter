@@ -18,9 +18,7 @@ export const AppLayout = ({ children }) => {
         <Header className="App-Bar">
           <Link to="/">
             <div className="app-title">
-              <Title level={3} style={{ marginTop: 5 }}>
-                SOLPAGE
-              </Title>
+              <Title level={3}>SOLPAGE</Title>
             </div>
           </Link>
           <AppBar />
