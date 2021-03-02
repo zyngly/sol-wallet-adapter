@@ -52,11 +52,12 @@ const GridView = ({ mergedCells, cellData, handleAddCell }) => {
     },
   });
 
-  const selectionNotAllowed = useCallback(
-    selections.length > 0 &&
-      selectionContainsMergedCells(selections[0]?.bounds, mergedCells),
-    [selections],
-  );
+  const selectionNotAllowed = useCallback(() => {
+    return (
+      selections.length > 0 &&
+      selectionContainsMergedCells(selections[0]?.bounds, mergedCells)
+    );
+  }, [mergedCells, selections]);
 
   return (
     <Row gutter={[16, 16]} align="middle">

@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { Typography } from 'antd';
 
 import { PREVIEW_HEIGHT, PREVIEW_WIDTH } from './constants';
 import { getRectSize } from './utils';
